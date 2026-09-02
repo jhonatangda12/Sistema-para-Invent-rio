@@ -1,3 +1,5 @@
-[phases.setup]
-nixPkgs = ["php83", "php83-extensions", "composer"]
-phpExtensions = ["pdo", "pdo_mysql", "mysqli", "mbstring", "dom", "xml", "zip"]
+[phases.build]
+cmds = ["echo 'Building PHP application'"]
+
+[start]
+cmd = "php -S 0.0.0.0:8080"
