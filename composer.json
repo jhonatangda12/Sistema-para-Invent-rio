@@ -1,8 +1,8 @@
 {
-  "require": {
-    "php": ">=8.0",
-    "ext-pdo": "*",
-    "ext-mbstring": "*",
-    "phpoffice/phpspreadsheet": "^1.29"
-  }
+    "require": {
+        "php": ">=8.0",
+        "ext-pdo": "*",
+        "ext-mbstring": "*",
+        "phpoffice/phpspreadsheet": "^1.29 || ^2.0"
+    }
 }
