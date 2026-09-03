@@ -5,8 +5,7 @@ cmds = ["echo 'Building PHP application'"]
 nixPkgs = [
     "php83",
     "php83Packages.composer",
-    "php83Extensions.pdo_mysql",
-    "php83Extensions.mysqli"
+    "php83Extensions.pdo_mysql"
 ]
 
 [start]
