@@ -1,14 +1,14 @@
 <?php
-$host = getenv('MYSQLHOST') ?: 'mysql.railway.internal';
-$db   = getenv('MYSQLDATABASE') ?: 'railway'; // Ajustado para MYSQL_DATABASE com underline
+$host = getenv('MYSQLHOST') ?: 'localhost';
+$db   = getenv('MYSQLDATABASE') ?: getenv('MYSQL_DATABASE') ?: 'railway';
 $user = getenv('MYSQLUSER') ?: 'root';
-$pass = getenv('MYSQLPASSWORD') ?: 'luZFmXafxTvpgUUoFshwmWmDjaIaNtYh';
+$pass = getenv('MYSQLPASSWORD') ?: '';
 $port = getenv('MYSQLPORT') ?: '3306';
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo "Erro na conexão com o banco de dados: " . $e->getMessage();
+    http_response_code(500);
+    die("Erro na conexão com o banco de dados: " . $e->getMessage());
 }
-?>
